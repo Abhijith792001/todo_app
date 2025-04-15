@@ -2,7 +2,7 @@ class TodoModel {
   int? id;
   String? title, description, priority;
   bool? completed;
-  DateTime? dueDate;
+  String? dueDate;
 
   TodoModel({
     this.id,
@@ -23,6 +23,12 @@ class TodoModel {
   }
 
   Map<String, dynamic> toJson() {
-    return {'id': id, 'title': title, 'description': description,'completed':completed,'dueDate':dueDate};
+    return {
+      'id': id,
+      'title': title,
+      'description': description,
+      'completed': completed,
+      'dueDate': dueDate,
+    };
   }
 }

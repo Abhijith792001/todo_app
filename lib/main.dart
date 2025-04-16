@@ -19,8 +19,12 @@ class MyApp extends StatelessWidget {
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_ , child) {
         return GetMaterialApp(
+          theme: ThemeData(
+           colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF0E1B1F),)
+          ),
           debugShowCheckedModeBanner: false,
           home: HomeScreen(),
+          
         );
       }
     );

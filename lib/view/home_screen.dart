@@ -42,7 +42,7 @@ import 'package:todo/model/todo_model.dart';
 // }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +123,7 @@ class HomeScreen extends StatelessWidget {
                             child: Image.asset(
                               'assets/images/bg-img.png',
                               height: 120.h,
-                              width: 160.w,
+                              width: 120.w,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -139,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                                     'Take Control of \nYour day',
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
-                                      fontSize: 22.sp,
+                                      fontSize: 20.sp,
                                       fontFamily: 'PermanentMarker',
                                       color: Colors.white,
                                     ),
@@ -150,7 +150,7 @@ class HomeScreen extends StatelessWidget {
                                     style: TextStyle(
                                       fontFamily: 'ADLaM',
                                       color: Colors.white,
-                                      fontSize: 9.5.sp,
+                                      fontSize: 9.sp,
                                     ),
                                   ),
                                 ],
@@ -168,9 +168,9 @@ class HomeScreen extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: Container(
-              padding: EdgeInsets.all(16.sp),
+              padding: EdgeInsets.only(top: 16.sp, left: 16.sp, right: 16.sp),
               width: Get.width,
-              height: 460.h,
+              height: 400.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(55.sp),
@@ -196,85 +196,111 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 15.h),
-                    width: Get.width,
-                    padding: EdgeInsets.all(16.sp),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(16)),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0x3F000000),
-                          blurRadius: 4,
-                          offset: Offset(0, 0),
-                          spreadRadius: 0,
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Flutter Task',
-                              style: TextStyle(fontWeight: FontWeight.w600),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: 20,
+                      padding: EdgeInsets.zero,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          margin: EdgeInsets.only(top: 10.h),
+                          width: Get.width,
+                          padding: EdgeInsets.all(16.sp),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(25.sp),
                             ),
-                            Text(
-                              '16/04/2025',
-                              style: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0x3F000000),
+                                blurRadius: 4,
+                                offset: Offset(0, 0),
+                                spreadRadius: 0,
                               ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(top: 10.h),
-                              // color: Colors.amber,
-                              width: Get.width * .6.sp,
-                              child: Text(
-                                'Study flutter UI, Stage-management ,\nAPI Integration ,',
-                                style: TextStyle(fontSize: 12.sp),
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Color.fromRGBO(24, 47, 53, 1),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(16.sp),
-                                ),
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                vertical: 2.h,
-                                horizontal: 12.w,
-                              ),
-
-                              child: Text(
-                                'High',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12.sp,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: 10.h),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Icon(LucideIcons.fileEdit, size: 16.sp),
-                              Icon(LucideIcons.trash2, size: 16.sp),
                             ],
                           ),
-                        ),
-                      ],
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Flutter Task',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15.sp,
+                                    ),
+                                  ),
+                                  Text(
+                                    '16/04/2025',
+                                    style: TextStyle(
+                                      fontSize: 12.5.sp,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    flex: 3,
+                                    child: Container(
+                                      margin: EdgeInsets.only(top: 10.h),
+                                      // color: Colors.amber,
+                                      width: 230.w,
+                                      child: Text(
+                                        'Study flutter UI, Stage-management API .. ',
+                                        style: TextStyle(
+                                          fontSize: 12.5.sp,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        color: Color.fromRGBO(24, 47, 53, 1),
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(9.sp),
+                                        ),
+                                      ),
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: 3.h,
+                                        horizontal: 0.w,
+                                      ),
+
+                                      child: Text(
+                                        'Low',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 10.h),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Icon(LucideIcons.fileEdit, size: 16.sp),
+                                    Icon(LucideIcons.trash2, size: 16.sp),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
@@ -282,6 +308,62 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: CircleAvatar(
+        radius: 30.sp,
+        child: Icon(LucideIcons.filePlus2, color: Colors.white),
+        backgroundColor: Color(0xFF0E1B1F),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(30.sp)),
+        child: BottomAppBar(
+          color: Color(0xFF0E1B1F),
+          shape: CircularNotchedRectangle(),
+          notchMargin: 12.0.sp,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  spacing: 40.sp,
+                  children: [
+                    Column(
+                      children: [
+                        Icon(LucideIcons.home, color: Colors.white),
+                        Text('Home', style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Icon(LucideIcons.heart, color: Colors.white),
+                        Text('Habit', style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  spacing: 40.sp,
+                  children: [
+                    Column(
+                      children: [
+                        Icon(LucideIcons.bookOpenCheck, color: Colors.white),
+                        Text('Task', style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Icon(LucideIcons.user, color: Colors.white),
+                        Text('Profile', style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

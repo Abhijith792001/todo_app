@@ -14,6 +14,8 @@ class TodoController extends GetxController {
     super.onInit();
   }
 
+  
+
   Future getData() async {
     final response = await dio.get('http://192.168.151.127:3000/api/todos');
     // print(response);
@@ -31,5 +33,13 @@ class TodoController extends GetxController {
         // todo.value = data as List<TodoModel>;
       }
    
+  }
+}
+
+
+class NavigationController extends GetxController{
+  var currentIndex =0.obs;
+  void changeIndex(int index){
+    currentIndex.value = index;
   }
 }

@@ -120,7 +120,6 @@ class HomeScreen extends StatelessWidget {
                       Row(
                         children: [
                           Container(
-                            // color: Colors.blue,
                             child: Image.asset(
                               'assets/images/bg-img.png',
                               height: 120.h,
@@ -132,7 +131,7 @@ class HomeScreen extends StatelessWidget {
                             child: Container(
                               // color: Colors.amber,
                               child: Column(
-                                spacing: 10,
+                                spacing: 10.sp,
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
@@ -140,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                                     'Take Control of \nYour day',
                                     textAlign: TextAlign.right,
                                     style: TextStyle(
-                                      fontSize: 22,
+                                      fontSize: 22.sp,
                                       fontFamily: 'PermanentMarker',
                                       color: Colors.white,
                                     ),
@@ -151,7 +150,7 @@ class HomeScreen extends StatelessWidget {
                                     style: TextStyle(
                                       fontFamily: 'ADLaM',
                                       color: Colors.white,
-                                      fontSize: 9.5,
+                                      fontSize: 9.5.sp,
                                     ),
                                   ),
                                 ],
@@ -169,13 +168,13 @@ class HomeScreen extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: Container(
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.all(16.sp),
               width: Get.width,
               height: 460.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(62),
-                  topRight: Radius.circular(62),
+                  topLeft: Radius.circular(55.sp),
+                  topRight: Radius.circular(55.sp),
                 ),
                 gradient: LinearGradient(
                   begin: Alignment(0.50, -0.00),
@@ -184,14 +183,98 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               child: Column(
-             
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     margin: EdgeInsets.only(top: 10.h),
                     child: Text(
                       'Recent Task',
-                      style: TextStyle(fontFamily: 'ADLaM', color: Colors.black,fontSize: 24),
+                      style: TextStyle(
+                        fontFamily: 'ADLaM',
+                        color: Colors.black,
+                        fontSize: 24.sp,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 15.h),
+                    width: Get.width,
+                    padding: EdgeInsets.all(16.sp),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x3F000000),
+                          blurRadius: 4,
+                          offset: Offset(0, 0),
+                          spreadRadius: 0,
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Flutter Task',
+                              style: TextStyle(fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              '16/04/2025',
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(top: 10.h),
+                              // color: Colors.amber,
+                              width: Get.width * .6.sp,
+                              child: Text(
+                                'Study flutter UI, Stage-management ,\nAPI Integration ,',
+                                style: TextStyle(fontSize: 12.sp),
+                              ),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(24, 47, 53, 1),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(16.sp),
+                                ),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                vertical: 2.h,
+                                horizontal: 12.w,
+                              ),
+
+                              child: Text(
+                                'High',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12.sp,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 10.h),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Icon(LucideIcons.fileEdit, size: 16.sp),
+                              Icon(LucideIcons.trash2, size: 16.sp),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
